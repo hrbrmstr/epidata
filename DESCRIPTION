@@ -3,9 +3,9 @@ Type: Package
 Title: Tools to Retrieve Economic Policy Institute Data Library Extracts
 Version: 0.1.0
 Date: 2017-01-04
-Author: Bob Rudis (bob@@rud.is)
-Encoding: UTF-8
+Authors@R: c(person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre")))
 Maintainer: Bob Rudis <bob@rud.is>
+Encoding: UTF-8
 Description: The Economic Policy Institute provides researchers, media, and the
     public with easily accessible, up-to-date, and comprehensive historical data on
     the American labor force. It is compiled from Economic Policy Institute analysis

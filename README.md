@@ -24,11 +24,7 @@ The following functions are implemented:
 ### Installation
 
 ``` r
-devtools::install_git("https://gitlab.com/hrbrmstr/epidata.git")
-```
-
-``` r
-options(width=120)
+devtools::install_github("hrbrmstr/epidata")
 ```
 
 ### Usage
@@ -111,7 +107,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Jan  4 16:18:51 2017"
+    ## [1] "Wed Jan  4 16:26:25 2017"
 
 ``` r
 test_dir("tests/")
@@ -121,4 +117,3 @@ test_dir("tests/")
     ## OK: 15 SKIPPED: 0 FAILED: 0
     ## 
     ## DONE ===================================================================================================================
-    ## Nice code.

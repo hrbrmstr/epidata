@@ -40,10 +40,10 @@ The following functions are implemented:
 ### Installation
 
 ```{r eval=FALSE}
-devtools::install_git("https://gitlab.com/hrbrmstr/epidata.git")
+devtools::install_github("hrbrmstr/epidata")
 ```
 
-```{r message=FALSE, warning=FALSE, error=FALSE}
+```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
 options(width=120)
 ```
 
