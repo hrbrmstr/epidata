@@ -62,6 +62,46 @@ get_underemployment()
 get_median_and_mean_wages("gr")
 ```
 
+### Extended Example
+
+```{r message=FALSE, warning=FALSE, error=FALSE, fig.width=10, fig.height=8, fig.retina=2}
+library(tidyverse)
+library(epidata)
+library(ggrepel)
+
+unemployment <- get_unemployment()
+wages <- get_median_and_mean_wages()
+
+glimpse(wages)
+
+glimpse(unemployment)
+
+group_by(unemployment, date=as.integer(lubridate::year(date))) %>%
+  summarise(rate=mean(all)) %>%
+  left_join(select(wages, date, median), by="date") %>%
+  filter(!is.na(median)) %>%
+  arrange(date) -> df
+
+cols <- ggthemes::tableau_color_pal()(3)
+
+ggplot(df, aes(rate, median)) +
+  geom_path(color=cols[1], arrow=arrow(type="closed", length=unit(10, "points"))) +
+  geom_point() +
+  geom_label_repel(aes(label=date),
+                   alpha=c(1, rep((4/5), (nrow(df)-2)), 1),
+                   size=c(5, rep(3, (nrow(df)-2)), 5),
+                   color=c(cols[2],
+                           rep("#2b2b2b", (nrow(df)-2)),
+                           cols[3]),
+                   family="Hind Medium") +
+  scale_x_continuous(name="Unemployment Rate", expand=c(0,0.001), label=scales::percent) +
+  scale_y_continuous(name="Median Wage", expand=c(0,0.25), label=scales::dollar) +
+  labs(title="U.S. Unemployment Rate vs Median Wage Since 1978",
+       subtitle="Wage data is in 2015 USD",
+       caption="Source: EPI analysis of Current Population Survey Outgoing Rotation Group microdata") +
+  hrbrmisc::theme_hrbrmstr(grid="XY")
+```
+
 ### Test Results
 
 ```{r message=FALSE, warning=FALSE, error=FALSE}
