@@ -98,6 +98,63 @@ get_median_and_mean_wages("gr")
     ## #   hispanic_men_median <dbl>, hispanic_men_average <dbl>, white_women_median <dbl>, white_women_average <dbl>,
     ## #   black_women_median <dbl>, black_women_average <dbl>, hispanic_women_median <dbl>, hispanic_women_average <dbl>
 
+### Extended Example
+
+``` r
+library(tidyverse)
+library(epidata)
+library(ggrepel)
+
+unemployment <- get_unemployment()
+wages <- get_median_and_mean_wages()
+
+glimpse(wages)
+```
+
+    ## Observations: 43
+    ## Variables: 3
+    ## $ date    <int> 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 198...
+    ## $ median  <dbl> 16.53, 16.17, 16.05, 16.15, 16.07, 16.36, 16.15, 16.07, 15.66, 15.75, 15.71, 15.71, 15.80, 16.27, 1...
+    ## $ average <dbl> 19.05, 18.67, 18.64, 18.87, 18.77, 18.83, 19.06, 18.66, 18.52, 18.65, 18.67, 18.75, 18.96, 19.41, 1...
+
+``` r
+glimpse(unemployment)
+```
+
+    ## Observations: 456
+    ## Variables: 2
+    ## $ date <date> 1978-12-01, 1979-01-01, 1979-02-01, 1979-03-01, 1979-04-01, 1979-05-01, 1979-06-01, 1979-07-01, 1979-...
+    ## $ all  <dbl> 0.061, 0.061, 0.060, 0.060, 0.059, 0.059, 0.059, 0.058, 0.058, 0.058, 0.059, 0.059, 0.059, 0.059, 0.05...
+
+``` r
+group_by(unemployment, date=as.integer(lubridate::year(date))) %>%
+  summarise(rate=mean(all)) %>%
+  left_join(select(wages, date, median), by="date") %>%
+  filter(!is.na(median)) %>%
+  arrange(date) -> df
+
+cols <- ggthemes::tableau_color_pal()(3)
+
+ggplot(df, aes(rate, median)) +
+  geom_path(color=cols[1], arrow=arrow(type="closed", length=unit(10, "points"))) +
+  geom_point() +
+  geom_label_repel(aes(label=date),
+                   alpha=c(1, rep((4/5), (nrow(df)-2)), 1),
+                   size=c(5, rep(3, (nrow(df)-2)), 5),
+                   color=c(cols[2],
+                           rep("#2b2b2b", (nrow(df)-2)),
+                           cols[3]),
+                   family="Hind Medium") +
+  scale_x_continuous(name="Unemployment Rate", expand=c(0,0.001), label=scales::percent) +
+  scale_y_continuous(name="Median Wage", expand=c(0,0.25), label=scales::dollar) +
+  labs(title="U.S. Unemployment Rate vs Median Wage Since 1978",
+       subtitle="Wage data is in 2015 USD",
+       caption="Source: EPI analysis of Current Population Survey Outgoing Rotation Group microdata") +
+  hrbrmisc::theme_hrbrmstr(grid="XY")
+```
+
+<img src="README_files/figure-markdown_github/unnamed-chunk-4-1.png" width="960" />
+
 ### Test Results
 
 ``` r
@@ -107,7 +164,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Jan  4 16:26:25 2017"
+    ## [1] "Wed Jan  4 18:51:04 2017"
 
 ``` r
 test_dir("tests/")
