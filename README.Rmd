@@ -1,0 +1,75 @@
+---
+output: rmarkdown::github_document
+---
+
+`epidata` : Tools to Retrieve Economic Policy Institute Data Library Extracts
+
+The [Economic Policy Institute](http://www.epi.org/data/) provides researchers, media, and
+the public with easily accessible, up-to-date, and comprehensive historical data on the 
+American labor force. It is compiled from Economic Policy Institute analysis of government
+data sources. Use it to research wages, inequality, and other economic indicators over 
+time and among demographic groups. Data is usually updated monthly.
+
+The following functions are implemented:
+
+- `get_black_white_wage_gap`:	Retreive the percent by which hourly wages of black workers 
+   are less than hourly wages of white workers
+- `get_college_wage_premium`:	Retreive the percent by which hourly wages of college graduates 
+   exceed those of otherwise equivalent high school graduates
+- `get_employment_to_population_ratio`:	Retreive the share of the civilian noninstitutional 
+   population that is employed
+- `get_gender_wage_gap`:	Retreive the percent by which hourly wages of female workers are 
+   less than hourly wages of male workers
+- `get_hispanic_white_wage_gap`:	Retreive the percent by which hourly wages of Hispanic 
+   workers are less than hourly wages of white workers
+- `get_labor_force_participation_rate`:	Retreive the share of the civilian noninstitutional
+   population that is in the labor force
+- `get_long_term_unemployment`:	Retreive the share of the labor force that has been unemployed 
+   for six months or longer
+- `get_median_and_mean_wages`:	Retreive the hourly wage in the middle of the wage distribution
+- `get_non_high_school_wage_penalty`:	Retreive the percent by which hourly wages of workers 
+   without a high school diploma (or equivalent) are less than wages of otherwise equivalent workers who have graduated from high school
+- `get_underemployment`:	Retreive the share of the labor force that is "underemployed"
+- `get_unemployment`:	Retreive the share of the labor force without a job
+- `get_unemployment_by_state`:	Retreive the share of the labor force without a job (by state)
+- `get_wages_by_education`:	Retreive the average hourly wages of workers disaggregated by the 
+   highest level of education attained
+- `get_wages_by_percentile`:	Retreive wages at ten distinct points in the wage distribution
+- `get_wage_ratios`:	Retreive the level of inequality within the hourly wage distribution.
+
+### Installation
+
+```{r eval=FALSE}
+devtools::install_git("https://gitlab.com/hrbrmstr/epidata.git")
+```
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+options(width=120)
+```
+
+### Usage
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(epidata)
+
+# current verison
+packageVersion("epidata")
+
+get_black_white_wage_gap()
+
+get_underemployment()
+
+get_median_and_mean_wages("gr")
+```
+
+### Test Results
+
+```{r message=FALSE, warning=FALSE, error=FALSE}
+library(epidata)
+library(testthat)
+
+date()
+
+test_dir("tests/")
+```
+
