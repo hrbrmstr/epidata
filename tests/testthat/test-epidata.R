@@ -1,0 +1,23 @@
+context("basic functionality")
+test_that("we can do something", {
+
+  testthat::skip_on_cran()
+  testthat::skip_on_travis()
+
+  expect_that(get_black_white_wage_gap(), is_a("data.frame"))
+  expect_that(get_college_wage_premium(), is_a("data.frame"))
+  expect_that(get_employment_to_population_ratio(), is_a("data.frame"))
+  expect_that(get_gender_wage_gap(), is_a("data.frame"))
+  expect_that(get_hispanic_white_wage_gap(), is_a("data.frame"))
+  expect_that(get_labor_force_participation_rate(), is_a("data.frame"))
+  expect_that(get_long_term_unemployment(), is_a("data.frame"))
+  expect_that(get_median_and_mean_wages(), is_a("data.frame"))
+  expect_that(get_non_high_school_wage_penalty(), is_a("data.frame"))
+  expect_that(get_underemployment(), is_a("data.frame"))
+  expect_that(get_unemployment(), is_a("data.frame"))
+  expect_that(get_unemployment_by_state(), is_a("data.frame"))
+  expect_that(get_wage_ratios(), is_a("data.frame"))
+  expect_that(get_wages_by_education(), is_a("data.frame"))
+  expect_that(get_wages_by_percentile(), is_a("data.frame"))
+
+})

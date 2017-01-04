@@ -1,0 +1,32 @@
+Package: epidata
+Type: Package
+Title: Tools to Retrieve Economic Policy Institute Data Library Extracts
+Version: 0.1.0
+Date: 2017-01-04
+Author: Bob Rudis (bob@@rud.is)
+Encoding: UTF-8
+Maintainer: Bob Rudis <bob@rud.is>
+Description: The Economic Policy Institute provides researchers, media, and the
+    public with easily accessible, up-to-date, and comprehensive historical data on
+    the American labor force. It is compiled from Economic Policy Institute analysis
+    of government data sources. Use it to research wages, inequality, and other
+    economic indicators over time and among demographic groups. Data is usually
+    updated monthly.
+URL: https://github.com/hrbrmstr/epidata
+BugReports: https://github.com/hrbrmstr/epidata/issues
+License: AGPL
+Suggests:
+    testthat
+Depends:
+    R (>= 3.2.0)
+Imports:
+    purrr,
+    httr,
+    jsonlite,
+    dplyr,
+    rvest,
+    xml2,
+    tidyr,
+    readr,
+    stringi
+RoxygenNote: 5.0.1
