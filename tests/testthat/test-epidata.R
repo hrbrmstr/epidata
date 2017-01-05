@@ -2,7 +2,6 @@ context("basic functionality")
 test_that("we can do something", {
 
   testthat::skip_on_cran()
-  testthat::skip_on_travis()
 
   expect_that(get_black_white_wage_gap(), is_a("data.frame"))
   expect_that(get_college_wage_premium(), is_a("data.frame"))

@@ -22,13 +22,11 @@ but has given up actively seeking work in the last four weeks ("marginally attac
 worker).
 }
 \examples{
-\dontrun{
 get_underemployment()
 
 get_underemployment("r")
 
 get_underemployment("grae")
-}
 }
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}

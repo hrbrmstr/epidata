@@ -21,13 +21,11 @@ Retreive the share of the labor force without a job
 See \code{get_unemployment_by_state()} for information on retrieving unemployment by state+race.
 }
 \examples{
-\dontrun{
 get_unemployment()
 
 get_unemployment("r")
 
 get_unemployment("grae")
-}
 }
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}

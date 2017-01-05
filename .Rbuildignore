@@ -6,3 +6,5 @@
 ^NOTES\.*Rmd$
 ^NOTES\.*html$
 ^docs$
+^README_files$
+^cran-comments\.md$

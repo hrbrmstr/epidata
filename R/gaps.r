@@ -18,11 +18,10 @@
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_gender_wage_gap()
 #'
 #' get_gender_wage_gap("r")
-#' }
 get_gender_wage_gap <- function(by=NULL) {
 
   params <- list(subject="wagegap-mf")
@@ -68,11 +67,10 @@ get_gender_wage_gap <- function(by=NULL) {
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_black_white_wage_gap()
 #'
 #' get_black_white_wage_gap("g")
-#' }
 get_black_white_wage_gap <- function(by=NULL) {
 
   params <- list(subject="wagegap-bw")
@@ -118,11 +116,10 @@ get_black_white_wage_gap <- function(by=NULL) {
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_hispanic_white_wage_gap()
 #'
 #' get_hispanic_white_wage_gap("g")
-#' }
 get_hispanic_white_wage_gap <- function(by=NULL) {
 
   params <- list(subject="wagegap-hw")
@@ -159,11 +156,10 @@ get_hispanic_white_wage_gap <- function(by=NULL) {
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_college_wage_premium()
 #'
 #' get_college_wage_premium("g")
-#' }
 get_college_wage_premium <- function(by=NULL) {
 
   params <- list(subject="wagegap-coll")

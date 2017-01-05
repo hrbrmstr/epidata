@@ -20,13 +20,11 @@ and the 95th percentile. The 95–50 and 50–10 wage ratios show how much great
 are at the top than the middle, and at the middle than the bottom, respectively.
 }
 \examples{
-\dontrun{
 get_wages_by_percentile()
 
 get_wages_by_percentile("r")
 
 get_wages_by_percentile("gr")
-}
 }
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
