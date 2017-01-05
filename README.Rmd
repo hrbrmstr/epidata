@@ -2,6 +2,8 @@
 output: rmarkdown::github_document
 ---
 
+[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/epidata.svg?branch=master)](https://travis-ci.org/hrbrmstr/epidata)
+
 `epidata` : Tools to Retrieve Economic Policy Institute Data Library Extracts
 
 The [Economic Policy Institute](http://www.epi.org/data/) provides researchers, media, and
@@ -28,7 +30,8 @@ The following functions are implemented:
    for six months or longer
 - `get_median_and_mean_wages`:	Retreive the hourly wage in the middle of the wage distribution
 - `get_non_high_school_wage_penalty`:	Retreive the percent by which hourly wages of workers 
-   without a high school diploma (or equivalent) are less than wages of otherwise equivalent workers who have graduated from high school
+   without a high school diploma (or equivalent) are less than wages of otherwise equivalent 
+   workers who have graduated from high school
 - `get_underemployment`:	Retreive the share of the labor force that is "underemployed"
 - `get_unemployment`:	Retreive the share of the labor force without a job
 - `get_unemployment_by_state`:	Retreive the share of the labor force without a job (by state)

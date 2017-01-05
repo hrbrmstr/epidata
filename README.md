@@ -1,4 +1,6 @@
 
+[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/epidata.svg?branch=master)](https://travis-ci.org/hrbrmstr/epidata)
+
 `epidata` : Tools to Retrieve Economic Policy Institute Data Library Extracts
 
 The [Economic Policy Institute](http://www.epi.org/data/) provides researchers, media, and the public with easily accessible, up-to-date, and comprehensive historical data on the American labor force. It is compiled from Economic Policy Institute analysis of government data sources. Use it to research wages, inequality, and other economic indicators over time and among demographic groups. Data is usually updated monthly.
@@ -164,7 +166,7 @@ library(testthat)
 date()
 ```
 
-    ## [1] "Wed Jan  4 18:51:04 2017"
+    ## [1] "Thu Jan  5 13:37:48 2017"
 
 ``` r
 test_dir("tests/")
