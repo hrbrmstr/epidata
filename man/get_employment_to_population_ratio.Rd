@@ -18,13 +18,11 @@ unemployment data by gender, race and education, you would set this parameter to
 Retreive the share of the civilian noninstitutional population that is employed
 }
 \examples{
-\dontrun{
 get_employment_to_population_ratio()
 
 get_employment_to_population_ratio("r")
 
 get_employment_to_population_ratio("grae")
-}
 }
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}

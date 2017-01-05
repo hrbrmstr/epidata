@@ -21,13 +21,11 @@ the arithmetic mean of hourly wages; or, the sum of all workers' hourly wages di
 by the number of workers.
 }
 \examples{
-\dontrun{
 get_median_and_mean_wages()
 
 get_median_and_mean_wages("r")
 
 get_median_and_mean_wages("gr")
-}
 }
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}

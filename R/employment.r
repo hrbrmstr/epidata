@@ -7,13 +7,12 @@
 #' @note See \code{get_unemployment_by_state()} for information on retrieving unemployment by state+race.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_unemployment()
 #'
 #' get_unemployment("r")
 #'
 #' get_unemployment("grae")
-#' }
 get_unemployment <- function(by=NULL) {
 
   params <- list(subject="unemp")
@@ -44,11 +43,10 @@ get_unemployment <- function(by=NULL) {
 #' @note See \code{get_unemployment()} for other unemployment extracts..
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_unemployment_by_state()
 #'
 #' get_unemployment_by_state("r")
-#' }
 get_unemployment_by_state <- function(by=NULL) {
 
   params <- list(subject="unempstate")
@@ -81,13 +79,12 @@ get_unemployment_by_state <- function(by=NULL) {
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_long_term_unemployment()
 #'
 #' get_long_term_unemployment("r")
 #'
 #' get_long_term_unemployment("grae")
-#' }
 get_long_term_unemployment <- function(by=NULL) {
 
   params <- list(subject="ltunemp")
@@ -125,13 +122,12 @@ get_long_term_unemployment <- function(by=NULL) {
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_underemployment()
 #'
 #' get_underemployment("r")
 #'
 #' get_underemployment("grae")
-#' }
 get_underemployment <- function(by=NULL) {
 
   params <- list(subject="underemp")
@@ -165,13 +161,12 @@ get_underemployment <- function(by=NULL) {
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_labor_force_participation_rate()
 #'
 #' get_labor_force_participation_rate("r")
 #'
 #' get_labor_force_participation_rate("grae")
-#' }
 get_labor_force_participation_rate <- function(by=NULL) {
 
   params <- list(subject="lfpr")
@@ -203,13 +198,12 @@ get_labor_force_participation_rate <- function(by=NULL) {
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @export
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
-#' @examples \dontrun{
+#' @examples
 #' get_employment_to_population_ratio()
 #'
 #' get_employment_to_population_ratio("r")
 #'
 #' get_employment_to_population_ratio("grae")
-#' }
 get_employment_to_population_ratio <- function(by=NULL) {
 
   params <- list(subject="lfpr")

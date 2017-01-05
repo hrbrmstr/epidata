@@ -11,13 +11,12 @@
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_median_and_mean_wages()
 #'
 #' get_median_and_mean_wages("r")
 #'
 #' get_median_and_mean_wages("gr")
-#' }
 get_median_and_mean_wages <- function(by=NULL) {
 
   params <- list(preset="wage-avg")
@@ -57,13 +56,12 @@ get_median_and_mean_wages <- function(by=NULL) {
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_wages_by_education()
 #'
 #' get_wages_by_education("r")
 #'
 #' get_wages_by_education("gr")
-#' }
 get_wages_by_education <- function(by=NULL) {
 
   params <- list(preset="wage-education")
@@ -102,13 +100,12 @@ get_wages_by_education <- function(by=NULL) {
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
-#' @examples \dontrun{
+#' @examples
 #' get_wages_by_percentile()
 #'
 #' get_wages_by_percentile("r")
 #'
 #' get_wages_by_percentile("gr")
-#' }
 get_wages_by_percentile <- function(by=NULL) {
 
   params <- list(preset="wage-percentiles")

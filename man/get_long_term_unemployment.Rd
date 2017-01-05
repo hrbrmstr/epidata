@@ -18,13 +18,11 @@ unemployment data by gender, race and education, you would set this parameter to
 Retreive  the share of the labor force that has been unemployed for six months or longer
 }
 \examples{
-\dontrun{
 get_long_term_unemployment()
 
 get_long_term_unemployment("r")
 
 get_long_term_unemployment("grae")
-}
 }
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}

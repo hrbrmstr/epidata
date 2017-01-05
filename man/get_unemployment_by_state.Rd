@@ -19,11 +19,9 @@ Retreive the share of the labor force without a job (by state)
 See \code{get_unemployment()} for other unemployment extracts..
 }
 \examples{
-\dontrun{
 get_unemployment_by_state()
 
 get_unemployment_by_state("r")
-}
 }
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}

@@ -20,11 +20,9 @@ education credential is a high school diploma, all else held equal (controlling 
 gender, race and ethnicity, education, experience, and geographic location).
 }
 \examples{
-\dontrun{
 get_college_wage_premium()
 
 get_college_wage_premium("g")
-}
 }
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}

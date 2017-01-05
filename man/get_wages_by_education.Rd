@@ -21,13 +21,11 @@ attainment for workers of each gender, racial, and ethnic group as a share of to
 employed for each group.
 }
 \examples{
-\dontrun{
 get_wages_by_education()
 
 get_wages_by_education("r")
 
 get_wages_by_education("gr")
-}
 }
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}

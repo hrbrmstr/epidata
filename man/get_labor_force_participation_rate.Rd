@@ -18,13 +18,11 @@ unemployment data by gender, race and education, you would set this parameter to
 (i.e., working or looking for work)
 }
 \examples{
-\dontrun{
 get_labor_force_participation_rate()
 
 get_labor_force_participation_rate("r")
 
 get_labor_force_participation_rate("grae")
-}
 }
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
