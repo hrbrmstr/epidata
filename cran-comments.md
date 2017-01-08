@@ -16,6 +16,8 @@ This is a new release, so there are no reverse dependencies.
 
 ---
 
+- Modified DESCRIPTION as per Kurt's submission feedback.
+
 - examples and tests hit a live server but they httr::stop_on_status() on error and
   they run under the CRAN time limit for tests. If you'd rather they be in a 
   \dontrun{} block or just not run or tested on CRAN that's cool and I'll modify
