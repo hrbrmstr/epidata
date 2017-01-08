@@ -2,7 +2,7 @@ Package: epidata
 Type: Package
 Title: Tools to Retrieve Economic Policy Institute Data Library Extracts
 Version: 0.1.0
-Date: 2017-01-04
+Date: 2017-01-08
 Authors@R: c(person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre")))
 Maintainer: Bob Rudis <bob@rud.is>
 Encoding: UTF-8
