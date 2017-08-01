@@ -10,7 +10,7 @@
 #' @docType package
 #' @author Bob Rudis (bob@@rud.is)
 #' @importFrom purrr map map_df map_chr keep discard %||%
-#' @importFrom stringi stri_replace_all_regex stri_trans_tolower %s+%
+#' @importFrom stringi stri_replace_all_regex stri_trans_tolower %s+% stri_replace_all_fixed
 #' @importFrom dplyr %>% as_data_frame mutate_all
 #' @import httr
 #' @importFrom readr type_convert

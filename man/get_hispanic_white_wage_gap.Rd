@@ -37,4 +37,3 @@ get_hispanic_white_wage_gap("g")
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 }
-

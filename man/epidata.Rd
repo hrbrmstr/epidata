@@ -15,4 +15,3 @@ demographic groups. Data is usually updated monthly.
 \author{
 Bob Rudis (bob@rud.is)
 }
-

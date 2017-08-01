@@ -27,4 +27,3 @@ get_long_term_unemployment("grae")
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 }
-
