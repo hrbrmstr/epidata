@@ -12,6 +12,8 @@ make_params <- function(params, by, ok="") {
 
 clean_cols <- function(x) {
 
+  x <- stringi::stri_replace_all_fixed(x, ",", "")
+
   if (any(grepl("%", x))) {
     as.numeric(stringi::stri_replace_all_fixed(x, "%", ""))/100
   } else if (any(grepl("\\$", x))) {

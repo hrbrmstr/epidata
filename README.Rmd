@@ -14,6 +14,7 @@ time and among demographic groups. Data is usually updated monthly.
 
 The following functions are implemented:
 
+- `get_annual_wages_and_work_hours`: Retreive CPS ASEC Annual Wages and Work Hours
 - `get_black_white_wage_gap`:	Retreive the percent by which hourly wages of black workers 
    are less than hourly wages of white workers
 - `get_college_wage_premium`:	Retreive the percent by which hourly wages of college graduates 
@@ -22,6 +23,7 @@ The following functions are implemented:
    population that is employed
 - `get_gender_wage_gap`:	Retreive the percent by which hourly wages of female workers are 
    less than hourly wages of male workers
+- `get_health_insurance_coverage`: Retreive Health Insurance Coverage
 - `get_hispanic_white_wage_gap`:	Retreive the percent by which hourly wages of Hispanic 
    workers are less than hourly wages of white workers
 - `get_labor_force_participation_rate`:	Retreive the share of the civilian noninstitutional
@@ -29,15 +31,18 @@ The following functions are implemented:
 - `get_long_term_unemployment`:	Retreive the share of the labor force that has been unemployed 
    for six months or longer
 - `get_median_and_mean_wages`:	Retreive the hourly wage in the middle of the wage distribution
+- `get_pension_coverage`:  Retreive Pension Coverage
 - `get_non_high_school_wage_penalty`:	Retreive the percent by which hourly wages of workers 
    without a high school diploma (or equivalent) are less than wages of otherwise equivalent 
    workers who have graduated from high school
 - `get_underemployment`:	Retreive the share of the labor force that is "underemployed"
 - `get_unemployment`:	Retreive the share of the labor force without a job
 - `get_unemployment_by_state`:	Retreive the share of the labor force without a job (by state)
+- `get_union_coverage`:  Retreive Union Coverage
 - `get_wages_by_education`:	Retreive the average hourly wages of workers disaggregated by the 
    highest level of education attained
 - `get_wages_by_percentile`:	Retreive wages at ten distinct points in the wage distribution
+- `get_wage_decomposition`:  Retreive Wage Decomposition
 - `get_wage_ratios`:	Retreive the level of inequality within the hourly wage distribution.
 
 ### Installation
@@ -71,6 +76,7 @@ get_median_and_mean_wages("gr")
 library(tidyverse)
 library(epidata)
 library(ggrepel)
+library(hrbrthemes)
 
 unemployment <- get_unemployment()
 wages <- get_median_and_mean_wages()
@@ -87,6 +93,8 @@ group_by(unemployment, date=as.integer(lubridate::year(date))) %>%
 
 cols <- ggthemes::tableau_color_pal()(3)
 
+update_geom_font_defaults(font_rc)
+
 ggplot(df, aes(rate, median)) +
   geom_path(color=cols[1], arrow=arrow(type="closed", length=unit(10, "points"))) +
   geom_point() +
@@ -96,13 +104,13 @@ ggplot(df, aes(rate, median)) +
                    color=c(cols[2],
                            rep("#2b2b2b", (nrow(df)-2)),
                            cols[3]),
-                   family="Hind Medium") +
+                   family=font_rc) +
   scale_x_continuous(name="Unemployment Rate", expand=c(0,0.001), label=scales::percent) +
   scale_y_continuous(name="Median Wage", expand=c(0,0.25), label=scales::dollar) +
   labs(title="U.S. Unemployment Rate vs Median Wage Since 1978",
        subtitle="Wage data is in 2015 USD",
        caption="Source: EPI analysis of Current Population Survey Outgoing Rotation Group microdata") +
-  hrbrmisc::theme_hrbrmstr(grid="XY")
+  theme_ipsum_rc(grid="XY")
 ```
 
 ### Test Results

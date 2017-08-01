@@ -7,9 +7,10 @@
 get_median_and_mean_wages(by = NULL)
 }
 \arguments{
-\item{by}{\code{NULL} or character string with any combination of \code{g} (Gender) or
-\code{r} (Race), i.e. if you want to retrieve
-unemployment data by gender and race, you would set this parameter to "\code{gr}".}
+\item{by}{\code{NULL} or character string with any combination of \code{g} (Gender),
+\code{r} (Race), \code{e} (Education), \code{d} (Percentile), \code{l} (Entry-level)
+i.e. if you want to wage data by gender and race, you would set this
+parameter to "\code{gr}".}
 }
 \value{
 \code{tbl_df} with data filtered by the selected criteria.
@@ -30,4 +31,3 @@ get_median_and_mean_wages("gr")
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 }
-

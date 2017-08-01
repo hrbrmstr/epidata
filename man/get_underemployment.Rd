@@ -31,4 +31,3 @@ get_underemployment("grae")
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 }
-

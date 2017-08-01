@@ -26,4 +26,3 @@ get_unemployment_by_state("r")
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 }
-

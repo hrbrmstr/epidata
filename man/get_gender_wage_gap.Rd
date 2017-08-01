@@ -36,4 +36,3 @@ get_gender_wage_gap("r")
 \references{
 \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 }
-

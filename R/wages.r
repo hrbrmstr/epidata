@@ -5,9 +5,10 @@
 #' the arithmetic mean of hourly wages; or, the sum of all workers' hourly wages divided
 #' by the number of workers.
 #'
-#' @param by \code{NULL} or character string with any combination of \code{g} (Gender) or
-#'   \code{r} (Race), i.e. if you want to retrieve
-#'   unemployment data by gender and race, you would set this parameter to "\code{gr}".
+#' @param by \code{NULL} or character string with any combination of \code{g} (Gender),
+#'   \code{r} (Race), \code{e} (Education), \code{d} (Percentile), \code{l} (Entry-level)
+#'   i.e. if you want to wage data by gender and race, you would set this
+#'   parameter to "\code{gr}".
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
@@ -19,11 +20,11 @@
 #' get_median_and_mean_wages("gr")
 get_median_and_mean_wages <- function(by=NULL) {
 
-  params <- list(preset="wage-avg")
+  params <- list(subject="wage-avg")
 
   if (!is.null(by)) {
-    params <- make_params(params, by, c("g", "r"))
-    params <- c(params, list(subject="wage", d="50,mean"))
+    params <- make_params(params, by, c("g", "r", "e", "d", "l"))
+    names(params) <- gsub("^l$", "el", names(params))
   }
 
   res <- epi_query(params)
@@ -36,7 +37,7 @@ get_median_and_mean_wages <- function(by=NULL) {
   out <- dplyr::mutate_all(out, "clean_cols")
   out <- suppressMessages(readr::type_convert(out))
 
-  cite <- html_text(read_html(res$meta$source %||% "<p>Economic Policy Institute</p>"))
+  cite <- "Economic Policy Institute"
   message(sprintf('Note: %s\nCitation: "%s"', res$meta$notes %||% "None", cite))
 
   out
