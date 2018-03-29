@@ -4,7 +4,7 @@ epi_query <- function(args) {
   qs <- paste(sprintf("%s=%s", names(args), args), collapse="&")
 
   httr::POST(
-    "http://www.epi.org/wp-admin/admin-ajax.php",
+    "https://www.epi.org/wp-admin/admin-ajax.php",
     httr::add_headers(`X-Requested-With`="XMLHttpRequest"),
     encode="form",
     body=list(action="epi_getdata", queryString = qs)) -> res
