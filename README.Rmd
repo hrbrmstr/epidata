@@ -2,15 +2,21 @@
 output: rmarkdown::github_document
 ---
 
+```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
+options(width=120)
+```
+
 [![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/epidata.svg?branch=master)](https://travis-ci.org/hrbrmstr/epidata)
 
-`epidata` : Tools to Retrieve Economic Policy Institute Data Library Extracts
+# epidata
 
-The [Economic Policy Institute](http://www.epi.org/data/) provides researchers, media, and
-the public with easily accessible, up-to-date, and comprehensive historical data on the 
-American labor force. It is compiled from Economic Policy Institute analysis of government
-data sources. Use it to research wages, inequality, and other economic indicators over 
-time and among demographic groups. Data is usually updated monthly.
+Tools to Retrieve Economic Policy Institute Data Library Extracts
+
+## Description 
+
+The [Economic Policy Institute](http://www.epi.org/data/) provides researchers, media, and the public with easily accessible, up-to-date, and comprehensive historical data on the American labor force. It is compiled from Economic Policy Institute analysis of government data sources. Use it to research wages, inequality, and other economic indicators over time and among demographic groups. Data is usually updated monthly.
+
+## What's Inside The Tin?
 
 The following functions are implemented:
 
@@ -45,17 +51,13 @@ The following functions are implemented:
 - `get_wage_decomposition`:  Retreive Wage Decomposition
 - `get_wage_ratios`:	Retreive the level of inequality within the hourly wage distribution.
 
-### Installation
+## Installation
 
 ```{r eval=FALSE}
 devtools::install_github("hrbrmstr/epidata")
 ```
 
-```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
-options(width=120)
-```
-
-### Usage
+## Usage
 
 ```{r message=FALSE, warning=FALSE, error=FALSE}
 library(epidata)
@@ -70,7 +72,7 @@ get_underemployment()
 get_median_and_mean_wages("gr")
 ```
 
-### Extended Example
+## Extended Example
 
 ```{r message=FALSE, warning=FALSE, error=FALSE, fig.width=10, fig.height=8, fig.retina=2}
 library(tidyverse)
@@ -112,15 +114,5 @@ ggplot(df, aes(rate, median)) +
        caption="Source: EPI analysis of Current Population Survey Outgoing Rotation Group microdata") +
   theme_ipsum_rc(grid="XY")
 ```
-
-### Test Results
-
-```{r message=FALSE, warning=FALSE, error=FALSE}
-library(epidata)
-library(testthat)
-
-date()
-
-test_dir("tests/")
 ```
 
