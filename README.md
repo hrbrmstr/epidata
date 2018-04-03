@@ -1,6 +1,5 @@
 
-[![Travis-CI Build
-Status](https://travis-ci.org/hrbrmstr/epidata.svg?branch=master)](https://travis-ci.org/hrbrmstr/epidata)
+<!-- [![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/epidata.svg?branch=master)](https://travis-ci.org/hrbrmstr/epidata) -->
 
 # epidata
 
@@ -76,7 +75,7 @@ library(epidata)
 packageVersion("epidata")
 ```
 
-    ## [1] '0.1.0'
+    ## [1] '0.2.0'
 
 ``` r
 get_black_white_wage_gap()
@@ -197,4 +196,3 @@ ggplot(df, aes(rate, median)) +
 ```
 
 <img src="README_files/figure-gfm/unnamed-chunk-4-1.png" width="960" />
-\`\`\`

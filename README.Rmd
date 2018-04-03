@@ -6,7 +6,7 @@ output: rmarkdown::github_document
 options(width=120)
 ```
 
-[![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/epidata.svg?branch=master)](https://travis-ci.org/hrbrmstr/epidata)
+<!-- [![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/epidata.svg?branch=master)](https://travis-ci.org/hrbrmstr/epidata) -->
 
 # epidata
 
@@ -114,5 +114,3 @@ ggplot(df, aes(rate, median)) +
        caption="Source: EPI analysis of Current Population Survey Outgoing Rotation Group microdata") +
   theme_ipsum_rc(grid="XY")
 ```
-```
-
