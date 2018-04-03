@@ -2,10 +2,12 @@
 ^\.Rproj\.user$
 ^\.travis\.yml$
 ^README\.*Rmd$
+^README\.Rmd$
 ^README\.*html$
 ^NOTES\.*Rmd$
 ^NOTES\.*html$
 ^docs$
+^README\.*$
 ^README_files$
 ^cran-comments\.md$
 ^Dockerfile$
