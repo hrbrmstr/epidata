@@ -5,7 +5,7 @@
 #'   unemployment data by gender, race and education, you would set this parameter to "\code{gre}".
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @note See \code{get_unemployment_by_state()} for information on retrieving unemployment by state+race.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_unemployment()
@@ -22,6 +22,7 @@ get_unemployment <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")
@@ -41,7 +42,7 @@ get_unemployment <- function(by=NULL) {
 #' @param by \code{NULL} or \code{r} for a partition by race.
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @note See \code{get_unemployment()} for other unemployment extracts..
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_unemployment_by_state()
@@ -56,6 +57,7 @@ get_unemployment_by_state <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")
@@ -77,7 +79,7 @@ get_unemployment_by_state <- function(by=NULL) {
 #'   \code{r} (Race), \code{a} (Age), \code{e} (Education). i.e. if you want to retrieve
 #'   unemployment data by gender, race and education, you would set this parameter to "\code{gre}".
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_long_term_unemployment()
@@ -94,6 +96,7 @@ get_long_term_unemployment <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")
@@ -120,7 +123,7 @@ get_long_term_unemployment <- function(by=NULL) {
 #'   \code{r} (Race), \code{a} (Age), \code{e} (Education). i.e. if you want to retrieve
 #'   unemployment data by gender, race and education, you would set this parameter to "\code{gre}".
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_underemployment()
@@ -137,6 +140,7 @@ get_underemployment <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")
@@ -159,7 +163,7 @@ get_underemployment <- function(by=NULL) {
 #'   \code{r} (Race), \code{a} (Age), \code{e} (Education). i.e. if you want to retrieve
 #'   unemployment data by gender, race and education, you would set this parameter to "\code{gre}".
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_labor_force_participation_rate()
@@ -176,6 +180,7 @@ get_labor_force_participation_rate <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")
@@ -197,7 +202,7 @@ get_labor_force_participation_rate <- function(by=NULL) {
 #'   unemployment data by gender, race and education, you would set this parameter to "\code{gre}".
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @export
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @examples
 #' get_employment_to_population_ratio()
 #'
@@ -213,6 +218,7 @@ get_employment_to_population_ratio <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")

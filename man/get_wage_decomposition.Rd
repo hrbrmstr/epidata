@@ -30,5 +30,5 @@ get_wages_by_percentile()
 get_wages_by_percentile("g")
 }
 \references{
-\href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+\href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 }

@@ -20,5 +20,5 @@ Data source: CPS ORG | Hirsch and Macpherson (2003)
 get_union_coverage()
 }
 \references{
-\href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+\href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 }

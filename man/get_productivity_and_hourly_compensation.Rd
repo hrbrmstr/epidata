@@ -32,5 +32,5 @@ get_productivity_and_hourly_compensation()
 get_productivity_and_hourly_compensation("g")
 }
 \references{
-\href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+\href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 }

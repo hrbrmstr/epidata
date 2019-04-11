@@ -10,7 +10,7 @@
 #'   i.e. if you want to wage data by gender and race, you would set this
 #'   parameter to "\code{gr}".
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_median_and_mean_wages()
@@ -30,6 +30,7 @@ get_median_and_mean_wages <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")
@@ -55,7 +56,7 @@ get_median_and_mean_wages <- function(by=NULL) {
 #'   \code{r} (Race), i.e. if you want to retrieve
 #'   unemployment data by gender and race, you would set this parameter to "\code{gr}".
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_wages_by_education()
@@ -99,7 +100,7 @@ get_wages_by_education <- function(by=NULL) {
 #'   \code{r} (Race), i.e. if you want to retrieve
 #'   unemployment data by gender and race, you would set this parameter to "\code{gr}".
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_wages_by_percentile()

@@ -6,7 +6,7 @@
 #' hourly wage.
 #'
 #' @return \code{tbl_df}
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @note CPS ASEC | Murphy and Welch (1989)
 #' @export
 #' @examples
@@ -18,7 +18,7 @@ get_annual_wages_and_work_hours <- function() {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
-  cols <- stringi::stri_replace_all_regex(cols, "[\\(\\)]", "")
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")

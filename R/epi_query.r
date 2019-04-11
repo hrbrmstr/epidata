@@ -4,10 +4,15 @@ epi_query <- function(args) {
   qs <- paste(sprintf("%s=%s", names(args), args), collapse="&")
 
   httr::POST(
-    "https://www.epi.org/wp-admin/admin-ajax.php",
+    "https://www.epi.org/wordpress/wp-admin/admin-ajax.php",
     httr::add_headers(`X-Requested-With`="XMLHttpRequest"),
-    encode="form",
-    body=list(action="epi_getdata", queryString = qs)) -> res
+    .EPIDATA_UA,
+    encode = "form",
+    body = list(
+      action = "epi_getdata",
+      queryString = qs
+    )
+  ) -> res
 
   httr::stop_for_status(res)
 

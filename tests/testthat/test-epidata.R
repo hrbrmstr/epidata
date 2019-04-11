@@ -1,11 +1,13 @@
-context("basic functionality")
-test_that("we can do something", {
+context("API endpoints")
+test_that("All API endpoints work as expected", {
 
   testthat::skip_on_cran()
 
   expect_that(get_annual_wages_and_work_hours(), is_a("data.frame"))
+  expect_that(get_annual_wages_by_wage_group(), is_a("data.frame"))
   expect_that(get_black_white_wage_gap(), is_a("data.frame"))
   expect_that(get_college_wage_premium(), is_a("data.frame"))
+  expect_that(get_compensation_wages_and_benefits(), is_a("data.frame"))
   expect_that(get_employment_to_population_ratio(), is_a("data.frame"))
   expect_that(get_gender_wage_gap(), is_a("data.frame"))
   expect_that(get_health_insurance_coverage(), is_a("data.frame"))
@@ -13,8 +15,10 @@ test_that("we can do something", {
   expect_that(get_labor_force_participation_rate(), is_a("data.frame"))
   expect_that(get_long_term_unemployment(), is_a("data.frame"))
   expect_that(get_median_and_mean_wages(), is_a("data.frame"))
+  expect_that(get_minimum_wage(), is_a("data.frame"))
   expect_that(get_non_high_school_wage_penalty(), is_a("data.frame"))
   expect_that(get_pension_coverage(), is_a("data.frame"))
+  expect_that(get_poverty_level_wages(), is_a("data.frame"))
   expect_that(get_productivity_and_hourly_compensation(), is_a("data.frame"))
   expect_that(get_underemployment(), is_a("data.frame"))
   expect_that(get_unemployment(), is_a("data.frame"))

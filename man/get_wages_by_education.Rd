@@ -28,5 +28,5 @@ get_wages_by_education("r")
 get_wages_by_education("gr")
 }
 \references{
-\href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+\href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 }

@@ -25,5 +25,5 @@ get_labor_force_participation_rate("r")
 get_labor_force_participation_rate("grae")
 }
 \references{
-\href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+\href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 }

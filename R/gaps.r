@@ -16,7 +16,7 @@
 #'
 #' @param by \code{NULL} or \code{r} for a parition by race
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_gender_wage_gap()
@@ -31,7 +31,7 @@ get_gender_wage_gap <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
-  cols <- stringi::stri_replace_all_regex(cols, "[\\(\\)]", "")
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")
@@ -65,7 +65,7 @@ get_gender_wage_gap <- function(by=NULL) {
 #'
 #' @param by \code{NULL} or \code{g} for a parition by gender
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_black_white_wage_gap()
@@ -80,7 +80,7 @@ get_black_white_wage_gap <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
-  cols <- stringi::stri_replace_all_regex(cols, "[\\(\\)]", "")
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")
@@ -114,7 +114,7 @@ get_black_white_wage_gap <- function(by=NULL) {
 #'
 #' @param by \code{NULL} or \code{g} for a parition by gender
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_hispanic_white_wage_gap()
@@ -129,7 +129,7 @@ get_hispanic_white_wage_gap <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
-  cols <- stringi::stri_replace_all_regex(cols, "[\\(\\)]", "")
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")
@@ -154,7 +154,7 @@ get_hispanic_white_wage_gap <- function(by=NULL) {
 #'
 #' @param by \code{NULL} or \code{g} for a parition by gender
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples
 #' get_college_wage_premium()
@@ -169,7 +169,7 @@ get_college_wage_premium <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
-  cols <- stringi::stri_replace_all_regex(cols, "[\\(\\)]", "")
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")
@@ -195,7 +195,7 @@ get_college_wage_premium <- function(by=NULL) {
 #'
 #' @param by \code{NULL} or \code{g} for a parition by gender
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples \dontrun{
 #' get_non_high_school_wage_penalty()
@@ -211,7 +211,7 @@ get_non_high_school_wage_penalty <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
-  cols <- stringi::stri_replace_all_regex(cols, "[\\(\\)]", "")
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")
@@ -243,7 +243,7 @@ get_non_high_school_wage_penalty <- function(by=NULL) {
 #'   \code{r} (Race), i.e. if you want to retrieve
 #'   unemployment data by gender and race, you would set this parameter to "\code{gr}".
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @export
 #' @examples \dontrun{
 #' get_wage_ratios()
@@ -264,6 +264,7 @@ get_wage_ratios <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")

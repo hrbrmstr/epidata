@@ -1,10 +1,9 @@
-0.2.0
-* WIP
-* Added new `get_` functions for new data sources provided by the EPI
-* Fixed issues with different return values for some hidden API calls
-* Updated to use new https
+# epidata 0.3.0
 
-0.1.0 
-* Passes CRAN checks
-* Complete EPI SWADL hidden API coverage
-* Initial release
+* Added a `NEWS.md` file to track changes to the package.
+* Added a package user-agent to httr calls
+* Changed http: epidata URLS to https:
+* Moved DESCRIPTION refs to GitLab
+* Fixed CRAN check errors due to new epidata API endpoint
+* Added 4 new data sources: "Annual wages by wage group", 
+  "Compensation, wages, and benefits", "Minimum wage", "Poverty-level wages"

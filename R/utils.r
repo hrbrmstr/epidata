@@ -10,7 +10,7 @@ make_params <- function(params, by, ok="") {
 
 }
 
-clean_cols <- function(x) {
+.clean_cols <- function(x) {
 
   x <- stringi::stri_replace_all_fixed(x, ",", "")
 
@@ -22,4 +22,10 @@ clean_cols <- function(x) {
     x
   }
 
+}
+
+clean_cols <- function(x) {
+  suppressWarnings(
+    .clean_cols(x)
+  )
 }

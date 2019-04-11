@@ -25,5 +25,5 @@ get_employment_to_population_ratio("r")
 get_employment_to_population_ratio("grae")
 }
 \references{
-\href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+\href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 }

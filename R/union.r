@@ -4,7 +4,7 @@
 #' bargaining agreement.
 #'
 #' @return \code{tbl_df}
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @note Data source: CPS ORG | Hirsch and Macpherson (2003)
 #' @export
 #' @examples
@@ -16,7 +16,7 @@ get_union_coverage <- function() {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
-  cols <- stringi::stri_replace_all_regex(cols, "[\\(\\)]", "")
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")

@@ -29,5 +29,5 @@ get_median_and_mean_wages("r")
 get_median_and_mean_wages("gr")
 }
 \references{
-\href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+\href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 }

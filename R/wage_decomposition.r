@@ -9,7 +9,7 @@
 #'
 #' @param by \code{NULL} or character string of \code{g} (Gender)
 #' @return \code{tbl_df} with data filtered by the selected criteria.
-#' @references \href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @note Data source: CPS ORG
 #' @export
 #' @examples
@@ -27,6 +27,7 @@ get_wage_decomposition <- function(by=NULL) {
   res <- epi_query(params)
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
+  cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
   cols <- stringi::stri_replace_all_regex(cols, "[[:space:]" %s+%
                                             rawToChar(as.raw(c(0xe2, 0x80, 0x93))) %s+% "-]+",
                                           "_")

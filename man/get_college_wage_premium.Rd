@@ -25,5 +25,5 @@ get_college_wage_premium()
 get_college_wage_premium("g")
 }
 \references{
-\href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+\href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 }

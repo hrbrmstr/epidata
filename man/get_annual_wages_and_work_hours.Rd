@@ -22,5 +22,5 @@ CPS ASEC | Murphy and Welch (1989)
 get_annual_wages_and_work_hours()
 }
 \references{
-\href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+\href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 }

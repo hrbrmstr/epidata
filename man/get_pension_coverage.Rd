@@ -34,5 +34,5 @@ get_health_insurance_coverage("r")
 get_health_insurance_coverage("gr")
 }
 \references{
-\href{http://www.epi.org/data/}{Economic Policy Institute Data Library}
+\href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 }
