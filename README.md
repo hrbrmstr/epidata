@@ -80,69 +80,59 @@ library(epidata)
 
 # current verison
 packageVersion("epidata")
-```
+## [1] '0.3.0'
 
-    ## [1] '0.3.0'
-
-``` r
 get_black_white_wage_gap()
-```
+## # A tibble: 46 x 8
+##     date white_median white_average black_median black_average gap_median gap_average gap_regression_based
+##    <dbl>        <dbl>         <dbl>        <dbl>         <dbl>      <dbl>       <dbl>                <dbl>
+##  1  1973         17.6          20.4         13.7          16.0      0.223       0.215              NA     
+##  2  1974         17.2          19.9         13.8          15.8      0.198       0.209              NA     
+##  3  1975         17.1          20           13.9          15.8      0.191       0.208              NA     
+##  4  1976         17.2          20.1         14.0          16.5      0.19        0.182              NA     
+##  5  1977         17.2          20.1         13.9          16.2      0.188       0.19               NA     
+##  6  1978         17.4          20.1         13.9          16.4      0.201       0.186              NA     
+##  7  1979         17.1          20.3         14.3          16.8      0.164       0.173               0.086 
+##  8  1980         17.1          19.9         14.1          16.4      0.173       0.174               0.086 
+##  9  1981         16.7          19.8         13.8          16.4      0.175       0.174               0.0820
+## 10  1982         16.9          20.0         13.7          16.2      0.194       0.191               0.099 
+## # … with 36 more rows
 
-    ## # A tibble: 46 x 8
-    ##     date white_median white_average black_median black_average gap_median gap_average gap_regression_based
-    ##    <dbl>        <dbl>         <dbl>        <dbl>         <dbl>      <dbl>       <dbl>                <dbl>
-    ##  1  1973         17.6          20.4         13.7          16.0      0.223       0.215              NA     
-    ##  2  1974         17.2          19.9         13.8          15.8      0.198       0.209              NA     
-    ##  3  1975         17.1          20           13.9          15.8      0.191       0.208              NA     
-    ##  4  1976         17.2          20.1         14.0          16.5      0.19        0.182              NA     
-    ##  5  1977         17.2          20.1         13.9          16.2      0.188       0.19               NA     
-    ##  6  1978         17.4          20.1         13.9          16.4      0.201       0.186              NA     
-    ##  7  1979         17.1          20.3         14.3          16.8      0.164       0.173               0.086 
-    ##  8  1980         17.1          19.9         14.1          16.4      0.173       0.174               0.086 
-    ##  9  1981         16.7          19.8         13.8          16.4      0.175       0.174               0.0820
-    ## 10  1982         16.9          20.0         13.7          16.2      0.194       0.191               0.099 
-    ## # … with 36 more rows
-
-``` r
 get_underemployment()
-```
+## # A tibble: 325 x 2
+##    date         all
+##    <date>     <dbl>
+##  1 1989-12-01 0.093
+##  2 1990-01-01 0.093
+##  3 1990-02-01 0.093
+##  4 1990-03-01 0.094
+##  5 1990-04-01 0.094
+##  6 1990-05-01 0.094
+##  7 1990-06-01 0.094
+##  8 1990-07-01 0.094
+##  9 1990-08-01 0.095
+## 10 1990-09-01 0.095
+## # … with 315 more rows
 
-    ## # A tibble: 325 x 2
-    ##    date         all
-    ##    <date>     <dbl>
-    ##  1 1989-12-01 0.093
-    ##  2 1990-01-01 0.093
-    ##  3 1990-02-01 0.093
-    ##  4 1990-03-01 0.094
-    ##  5 1990-04-01 0.094
-    ##  6 1990-05-01 0.094
-    ##  7 1990-06-01 0.094
-    ##  8 1990-07-01 0.094
-    ##  9 1990-08-01 0.095
-    ## 10 1990-09-01 0.095
-    ## # … with 315 more rows
-
-``` r
 get_median_and_mean_wages("gr")
+## # A tibble: 46 x 25
+##     date median average men_median men_average women_median women_average white_median white_average black_median
+##    <dbl>  <dbl>   <dbl>      <dbl>       <dbl>        <dbl>         <dbl>        <dbl>         <dbl>        <dbl>
+##  1  1973   17.0    19.7       20.6        23.1         13.0          14.9         17.6          20.4         13.7
+##  2  1974   16.6    19.4       20.3        22.7         12.8          14.6         17.2          19.9         13.8
+##  3  1975   16.6    19.4       20.7        22.7         12.9          14.8         17.1          20           13.9
+##  4  1976   16.6    19.6       20.3        22.9         13.1          15.1         17.2          20.1         14.0
+##  5  1977   16.6    19.5       20.5        22.9         13.0          15.0         17.2          20.1         13.9
+##  6  1978   16.8    19.6       20.8        23.0         13.0          15.0         17.4          20.1         13.9
+##  7  1979   16.5    19.7       20.7        23.2         13.1          15.2         17.1          20.3         14.3
+##  8  1980   16.4    19.4       20.5        22.8         13.1          15.1         17.1          19.9         14.1
+##  9  1981   16.2    19.2       20.1        22.6         13.1          15.1         16.7          19.8         13.8
+## 10  1982   16.1    19.4       20.1        22.8         13.0          15.3         16.9          20.0         13.7
+## # … with 36 more rows, and 15 more variables: black_average <dbl>, hispanic_median <dbl>, hispanic_average <dbl>,
+## #   white_men_median <dbl>, white_men_average <dbl>, black_men_median <dbl>, black_men_average <dbl>,
+## #   hispanic_men_median <dbl>, hispanic_men_average <dbl>, white_women_median <dbl>, white_women_average <dbl>,
+## #   black_women_median <dbl>, black_women_average <dbl>, hispanic_women_median <dbl>, hispanic_women_average <dbl>
 ```
-
-    ## # A tibble: 46 x 25
-    ##     date median average men_median men_average women_median women_average white_median white_average black_median
-    ##    <dbl>  <dbl>   <dbl>      <dbl>       <dbl>        <dbl>         <dbl>        <dbl>         <dbl>        <dbl>
-    ##  1  1973   17.0    19.7       20.6        23.1         13.0          14.9         17.6          20.4         13.7
-    ##  2  1974   16.6    19.4       20.3        22.7         12.8          14.6         17.2          19.9         13.8
-    ##  3  1975   16.6    19.4       20.7        22.7         12.9          14.8         17.1          20           13.9
-    ##  4  1976   16.6    19.6       20.3        22.9         13.1          15.1         17.2          20.1         14.0
-    ##  5  1977   16.6    19.5       20.5        22.9         13.0          15.0         17.2          20.1         13.9
-    ##  6  1978   16.8    19.6       20.8        23.0         13.0          15.0         17.4          20.1         13.9
-    ##  7  1979   16.5    19.7       20.7        23.2         13.1          15.2         17.1          20.3         14.3
-    ##  8  1980   16.4    19.4       20.5        22.8         13.1          15.1         17.1          19.9         14.1
-    ##  9  1981   16.2    19.2       20.1        22.6         13.1          15.1         16.7          19.8         13.8
-    ## 10  1982   16.1    19.4       20.1        22.8         13.0          15.3         16.9          20.0         13.7
-    ## # … with 36 more rows, and 15 more variables: black_average <dbl>, hispanic_median <dbl>, hispanic_average <dbl>,
-    ## #   white_men_median <dbl>, white_men_average <dbl>, black_men_median <dbl>, black_men_average <dbl>,
-    ## #   hispanic_men_median <dbl>, hispanic_men_average <dbl>, white_women_median <dbl>, white_women_average <dbl>,
-    ## #   black_women_median <dbl>, black_women_average <dbl>, hispanic_women_median <dbl>, hispanic_women_average <dbl>
 
 ## Extended Example
 
@@ -156,24 +146,18 @@ unemployment <- get_unemployment()
 wages <- get_median_and_mean_wages()
 
 glimpse(wages)
-```
+## Observations: 46
+## Variables: 3
+## $ date    <dbl> 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989,…
+## $ median  <dbl> 16.96, 16.63, 16.64, 16.60, 16.62, 16.77, 16.49, 16.38, 16.21, 16.14, 16.17, 16.26, 16.51, 16.62, 16.…
+## $ average <dbl> 19.73, 19.37, 19.41, 19.63, 19.53, 19.57, 19.74, 19.35, 19.24, 19.41, 19.45, 19.52, 19.73, 20.20, 20.…
 
-    ## Observations: 46
-    ## Variables: 3
-    ## $ date    <dbl> 1973, 1974, 1975, 1976, 1977, 1978, 1979, 1980, 1981, 1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989,…
-    ## $ median  <dbl> 16.96, 16.63, 16.64, 16.60, 16.62, 16.77, 16.49, 16.38, 16.21, 16.14, 16.17, 16.26, 16.51, 16.62, 16.…
-    ## $ average <dbl> 19.73, 19.37, 19.41, 19.63, 19.53, 19.57, 19.74, 19.35, 19.24, 19.41, 19.45, 19.52, 19.73, 20.20, 20.…
-
-``` r
 glimpse(unemployment)
-```
+## Observations: 457
+## Variables: 2
+## $ date <date> 1978-12-01, 1979-01-01, 1979-02-01, 1979-03-01, 1979-04-01, 1979-05-01, 1979-06-01, 1979-07-01, 1979-08…
+## $ all  <dbl> 0.061, 0.061, 0.060, 0.060, 0.059, 0.059, 0.059, 0.058, 0.058, 0.058, 0.059, 0.059, 0.059, 0.059, 0.059,…
 
-    ## Observations: 457
-    ## Variables: 2
-    ## $ date <date> 1978-12-01, 1979-01-01, 1979-02-01, 1979-03-01, 1979-04-01, 1979-05-01, 1979-06-01, 1979-07-01, 1979-08…
-    ## $ all  <dbl> 0.061, 0.061, 0.060, 0.060, 0.059, 0.059, 0.059, 0.058, 0.058, 0.058, 0.059, 0.059, 0.059, 0.059, 0.059,…
-
-``` r
 group_by(unemployment, date=as.integer(lubridate::year(date))) %>%
   summarise(rate=mean(all)) %>%
   left_join(select(wages, date, median), by="date") %>%
@@ -202,4 +186,4 @@ ggplot(df, aes(rate, median)) +
   theme_ipsum_rc(grid="XY")
 ```
 
-<img src="README_files/figure-gfm/unnamed-chunk-4-1.png" width="960" />
+<img src="man/figures/README-unnamed-chunk-4-1.png" width="100%" />

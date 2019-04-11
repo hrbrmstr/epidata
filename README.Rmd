@@ -3,6 +3,14 @@ output: rmarkdown::github_document
 ---
 
 ```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "##",
+  fig.path = "man/figures/README-",
+  out.width = "100%",
+  message = FALSE,
+  warning = FALSE
+)
 options(width=120)
 ```
 
