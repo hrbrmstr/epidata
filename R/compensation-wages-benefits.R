@@ -9,14 +9,16 @@
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @note Data source: NIPA | ECEC
+#' @return data frame
 #' @export
 #' @examples
-#' get_compensation_wages_and_benefits()
+#' if (not_dos()) get_compensation_wages_and_benefits()
 get_compensation_wages_and_benefits <- function() {
 
   params <- list(subject="compben")
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('%,\\)]", "")

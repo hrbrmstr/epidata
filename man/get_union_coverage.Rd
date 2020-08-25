@@ -8,6 +8,8 @@ get_union_coverage()
 }
 \value{
 \code{tbl_df}
+
+data frame
 }
 \description{
 The union coverage rate shows the percentage of the workforce covered by a collective
@@ -17,7 +19,7 @@ bargaining agreement.
 Data source: CPS ORG | Hirsch and Macpherson (2003)
 }
 \examples{
-get_union_coverage()
+if (interactive()) get_union_coverage()
 }
 \references{
 \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}

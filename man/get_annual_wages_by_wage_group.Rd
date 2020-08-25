@@ -8,6 +8,8 @@ get_annual_wages_by_wage_group()
 }
 \value{
 \code{tbl_df} with data filtered by the selected criteria.
+
+data frame
 }
 \description{
 Return the average annual salaries for select wage groups, with particular focus on
@@ -35,7 +37,7 @@ detailed explanation, see the methodology for annual wages and hours.
 Data source: SSA | Kopczuk, Saez, and Song (2010)
 }
 \examples{
-get_annual_wages_by_wage_group()
+if (not_dos()) get_annual_wages_by_wage_group()
 }
 \references{
 \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}

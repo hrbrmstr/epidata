@@ -1,8 +1,8 @@
 Package: epidata
 Type: Package
 Title: Tools to Retrieve Economic Policy Institute Data Library Extracts
-Version: 0.3.0
-Date: 2019-04-11
+Version: 0.4.0
+Date: 2020-08-25
 Authors@R: c(person("Bob", "Rudis", email = "bob@rud.is", role = c("aut", "cre")))
 Maintainer: Bob Rudis <bob@rud.is>
 Encoding: UTF-8
@@ -15,11 +15,9 @@ Description: The Economic Policy Institute (<http://www.epi.org/>) provides
 URL: https://gitlab.com/hrbrmstr/epidata
 BugReports: https://gitlab.com/hrbrmstr/epidata/issues
 License: AGPL
-Suggests:
-    testthat
-Depends:
-    R (>= 3.2.0)
-Imports:
+Depends: 
+    R (>= 3.6.0)
+Imports: 
     purrr,
     httr,
     jsonlite,
@@ -28,5 +26,6 @@ Imports:
     xml2,
     tidyr,
     readr,
-    stringi
-RoxygenNote: 6.1.1
+    stringi,
+    tinytest
+RoxygenNote: 7.1.1

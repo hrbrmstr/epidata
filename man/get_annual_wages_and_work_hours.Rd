@@ -8,6 +8,8 @@ get_annual_wages_and_work_hours()
 }
 \value{
 \code{tbl_df}
+
+data frame
 }
 \description{
 Annual, weekly, and hourly wages and work hours show the average wages and work hours

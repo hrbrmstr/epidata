@@ -13,11 +13,12 @@
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @note Data source: NIPA (compensation) | BLS Productivity Data
+#' @return data frame
 #' @export
 #' @examples
-#' get_productivity_and_hourly_compensation()
+#' if (not_dos()) get_productivity_and_hourly_compensation()
 #'
-#' get_productivity_and_hourly_compensation("g")
+#' if (not_dos()) get_productivity_and_hourly_compensation("g")
 get_productivity_and_hourly_compensation <- function(by=NULL) {
 
   params <- list(subject="prodpay")
@@ -27,6 +28,7 @@ get_productivity_and_hourly_compensation <- function(by=NULL) {
   }
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")

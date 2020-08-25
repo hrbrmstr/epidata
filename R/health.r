@@ -13,13 +13,14 @@
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @note Data source: CPS ASEC
+#' @return data frame
 #' @export
 #' @examples
-#' get_health_insurance_coverage()
+#' if (not_dos()) get_health_insurance_coverage()
 #'
-#' get_health_insurance_coverage("r")
+#' if (not_dos()) get_health_insurance_coverage("r")
 #'
-#' get_health_insurance_coverage("gr")
+#' if (not_dos()) get_health_insurance_coverage("gr")
 get_health_insurance_coverage <- function(by=NULL) {
 
   params <- list(subject="healthcov")
@@ -30,6 +31,7 @@ get_health_insurance_coverage <- function(by=NULL) {
   names(params) <- gsub("^l$", "el", names(params))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")

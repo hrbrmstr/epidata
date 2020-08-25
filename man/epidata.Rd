@@ -3,7 +3,6 @@
 \docType{package}
 \name{epidata}
 \alias{epidata}
-\alias{epidata-package}
 \title{A package to Tools to Retrieve Economic Policy Institute Data Library Extracts}
 \description{
 The Economic Policy Institute provides researchers, media, and the public with easily

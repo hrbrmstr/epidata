@@ -11,6 +11,8 @@ get_productivity_and_hourly_compensation(by = NULL)
 }
 \value{
 \code{tbl_df} with data filtered by the selected criteria.
+
+data frame
 }
 \description{
 Productivity is how much workers produce per hour, or the growth of output of goods and
@@ -27,9 +29,9 @@ Population sample: All workers & Production and nonsupervisory workers
 Data source: NIPA (compensation) | BLS Productivity Data
 }
 \examples{
-get_productivity_and_hourly_compensation()
+if (not_dos()) get_productivity_and_hourly_compensation()
 
-get_productivity_and_hourly_compensation("g")
+if (not_dos()) get_productivity_and_hourly_compensation("g")
 }
 \references{
 \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}

@@ -8,6 +8,8 @@ get_minimum_wage()
 }
 \value{
 \code{tbl_df} with data filtered by the selected criteria.
+
+data frame
 }
 \description{
 Return tthe hourly minimum wage set by federal law. The real minimum wage is the federal
@@ -24,7 +26,7 @@ Population sample: Production and nonsupervisory workers (average wages)
 Data source: U.S. Department of Labor Wage and Hour Division | CES
 }
 \examples{
-get_minimum_wage()
+if (not_dos()) get_minimum_wage()
 }
 \references{
 \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}

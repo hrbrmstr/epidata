@@ -6,14 +6,16 @@
 #' @return \code{tbl_df}
 #' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
 #' @note Data source: CPS ORG | Hirsch and Macpherson (2003)
+#' @return data frame
 #' @export
 #' @examples
-#' get_union_coverage()
+#' if (interactive()) get_union_coverage()
 get_union_coverage <- function() {
 
   params <- list(subject="unioncov")
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")

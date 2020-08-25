@@ -13,6 +13,8 @@ unemployment data by gender and race, you would set this parameter to "\code{gr}
 }
 \value{
 \code{tbl_df} with data filtered by the selected criteria.
+
+data frame
 }
 \description{
 Return the share of workers earning equal to or less than the poverty-level wage, or
@@ -24,13 +26,11 @@ Population sample: Wage and salary workers age 18–64. Data source: CPS ORG | C
 Bureau (poverty threshold)
 }
 \examples{
-\dontrun{
-get_poverty_level_wages()
+if (not_dos()) get_poverty_level_wages()
 
-get_poverty_level_wages("r")
+if (not_dos()) get_poverty_level_wages("r")
 
-get_poverty_level_wages("gr")
-}
+if (not_dos()) get_poverty_level_wages("gr")
 }
 \references{
 \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}

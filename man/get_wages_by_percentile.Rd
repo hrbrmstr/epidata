@@ -13,6 +13,8 @@ unemployment data by gender and race, you would set this parameter to "\code{gr}
 }
 \value{
 \code{tbl_df} with data filtered by the selected criteria.
+
+data frame
 }
 \description{
 Wage percentiles are wages at ten distinct points in the wage distribution: deciles

@@ -20,6 +20,7 @@ get_unemployment <- function(by=NULL) {
   if (!is.null(by)) params <- make_params(params, by, c("g", "r", "a", "e"))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
@@ -55,6 +56,7 @@ get_unemployment_by_state <- function(by=NULL) {
   if (!is.null(by)) params <- make_params(params, by, c("r"))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
@@ -94,6 +96,7 @@ get_long_term_unemployment <- function(by=NULL) {
   if (!is.null(by)) params <- make_params(params, by, c("g", "r", "a", "e"))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
@@ -138,6 +141,7 @@ get_underemployment <- function(by=NULL) {
   if (!is.null(by)) params <- make_params(params, by, c("g", "r", "a", "e"))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
@@ -178,6 +182,7 @@ get_labor_force_participation_rate <- function(by=NULL) {
   if (!is.null(by)) params <- make_params(params, by, c("g", "r", "a", "e"))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
@@ -203,19 +208,21 @@ get_labor_force_participation_rate <- function(by=NULL) {
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @export
 #' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @return data frame
 #' @examples
-#' get_employment_to_population_ratio()
+#' if (not_dos()) get_employment_to_population_ratio()
 #'
-#' get_employment_to_population_ratio("r")
+#' if (not_dos()) get_employment_to_population_ratio("r")
 #'
-#' get_employment_to_population_ratio("grae")
+#' if (not_dos()) get_employment_to_population_ratio("grae")
 get_employment_to_population_ratio <- function(by=NULL) {
 
-  params <- list(subject="lfpr")
+  params <- list(subject="epop")
 
   if (!is.null(by)) params <- make_params(params, by, c("g", "r", "a", "e"))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")

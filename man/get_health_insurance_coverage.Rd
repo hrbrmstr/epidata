@@ -14,6 +14,8 @@ parameter to "\code{gr}".}
 }
 \value{
 \code{tbl_df} with data filtered by the selected criteria.
+
+data frame
 }
 \description{
 Employer-sponsored health insurance (ESI) coverage shows the share of workers who
@@ -27,11 +29,11 @@ Population sample: Private-sector workers age 18–64 & at least 20 hours/week a
 Data source: CPS ASEC
 }
 \examples{
-get_health_insurance_coverage()
+if (not_dos()) get_health_insurance_coverage()
 
-get_health_insurance_coverage("r")
+if (not_dos()) get_health_insurance_coverage("r")
 
-get_health_insurance_coverage("gr")
+if (not_dos()) get_health_insurance_coverage("gr")
 }
 \references{
 \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}

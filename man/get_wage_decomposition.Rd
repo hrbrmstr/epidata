@@ -11,6 +11,8 @@ get_wage_decomposition(by = NULL)
 }
 \value{
 \code{tbl_df} with data filtered by the selected criteria.
+
+data frame
 }
 \description{
 Wage inequality data shows the overall wage inequality and the within-group and

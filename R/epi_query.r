@@ -5,7 +5,10 @@ epi_query <- function(args) {
 
   httr::POST(
     "https://www.epi.org/wordpress/wp-admin/admin-ajax.php",
-    httr::add_headers(`X-Requested-With`="XMLHttpRequest"),
+    httr::add_headers(
+      `X-Requested-With` = "XMLHttpRequest",
+      `Referer` = "https://www.epi.org/data/"
+    ),
     .EPIDATA_UA,
     encode = "form",
     body = list(
@@ -14,7 +17,10 @@ epi_query <- function(args) {
     )
   ) -> res
 
-  httr::stop_for_status(res)
+  if (httr::status_code(res) != 200) {
+    warning("EPI API is unresponsive. Please try again later.", call. = FALSE)
+    return(NULL)
+  }
 
   jsonlite::fromJSON(httr::content(res, as="text"), flatten=TRUE)
 

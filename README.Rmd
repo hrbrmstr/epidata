@@ -1,73 +1,45 @@
 ---
 output: rmarkdown::github_document
+editor_options: 
+  chunk_output_type: console
 ---
-
-```{r message=FALSE, warning=FALSE, error=FALSE, include=FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "##",
-  fig.path = "man/figures/README-",
-  out.width = "100%",
-  message = FALSE,
-  warning = FALSE
-)
-options(width=120)
+```{r pkg-knitr-opts, include=FALSE}
+hrbrpkghelpr::global_opts()
 ```
 
-<!-- [![Travis-CI Build Status](https://travis-ci.org/hrbrmstr/epidata.svg?branch=master)](https://travis-ci.org/hrbrmstr/epidata) -->
+```{r badges, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::stinking_badges()
+```
 
-# epidata
+```{r description, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::yank_title_and_description()
+```
 
-Tools to Retrieve Economic Policy Institute Data Library Extracts
-
-## Description 
-
-The [Economic Policy Institute](http://www.epi.org/data/) provides researchers, media, and the public with easily accessible, up-to-date, and comprehensive historical data on the American labor force. It is compiled from Economic Policy Institute analysis of government data sources. Use it to research wages, inequality, and other economic indicators over time and among demographic groups. Data is usually updated monthly.
-
-## What's Inside The Tin?
+## What's Inside The Tin
 
 The following functions are implemented:
 
-- `get_annual_wages_and_work_hours`:	Retreive CPS ASEC Annual Wages and Work Hours
-- `get_annual_wages_by_wage_group`:	Annual wages by wage group
-- `get_black_white_wage_gap`:	Retreive the percent by which hourly wages of black workers are less than hourly wages of white workers
-- `get_college_wage_premium`:	Retreive the percent by which hourly wages of college graduates exceed those of otherwise equivalent high school graduates
-- `get_compensation_wages_and_benefits`:	Compensation, wages, and benefits
-- `get_employment_to_population_ratio`:	Retreive the share of the civilian noninstitutional population that is employed
-- `get_gender_wage_gap`:	Retreive the percent by which hourly wages of female workers are less than hourly wages of male workers
-- `get_health_insurance_coverage`:	Retreive Health Insurance Coverage
-- `get_hispanic_white_wage_gap`:	Retreive the percent by which hourly wages of Hispanic workers are less than hourly wages of white workers
-- `get_labor_force_participation_rate`:	Retreive the share of the civilian noninstitutional population that is in the labor force
-- `get_long_term_unemployment`:	Retreive the share of the labor force that has been unemployed for six months or longer
-- `get_median_and_mean_wages`:	Retreive the hourly wage in the middle of the wage distribution
-- `get_minimum_wage`:	Minimum wage
-- `get_non_high_school_wage_penalty`:	Retreive the percent by which hourly wages of workers without a high school diploma (or equivalent) are less than wages of otherwise equivalent workers who have graduated from high school
-- `get_pension_coverage`:	Retreive Pension Coverage
-- `get_poverty_level_wages`:	Poverty-level wages
-- `get_productivity_and_hourly_compensation`:	Retreive Productivity and hourly compensation
-- `get_underemployment`:	Retreive the share of the labor force that is "underemployed"
-- `get_unemployment`:	Retreive the share of the labor force without a job
-- `get_unemployment_by_state`:	Retreive the share of the labor force without a job (by state)
-- `get_union_coverage`:	Retreive Union Coverage
-- `get_wages_by_education`:	Retreive the average hourly wages of workers disaggregated by the highest level of education attained
-- `get_wages_by_percentile`:	Retreive wages at ten distinct points in the wage distribution
-- `get_wage_decomposition`:	Retreive Wage Decomposition
-- `get_wage_ratios`:	Retreive the level of inequality within the hourly wage distribution.
+```{r ingredients, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::describe_ingredients()
+```
 
 ## Installation
 
-```{r eval=FALSE}
-devtools::install_github("hrbrmstr/epidata")
+```{r install-ex, results='asis', echo=FALSE, cache=FALSE}
+hrbrpkghelpr::install_block()
 ```
 
 ## Usage
 
-```{r message=FALSE, warning=FALSE, error=FALSE}
+```{r lib-ex}
 library(epidata)
 
-# current verison
+# current version
 packageVersion("epidata")
 
+```
+
+```{r ex01}
 get_black_white_wage_gap()
 
 get_underemployment()
@@ -77,7 +49,7 @@ get_median_and_mean_wages("gr")
 
 ## Extended Example
 
-```{r message=FALSE, warning=FALSE, error=FALSE, fig.width=10, fig.height=8, fig.retina=2}
+```{r fig.width=10, fig.height=8, fig.retina=2}
 library(tidyverse)
 library(epidata)
 library(ggrepel)
@@ -90,30 +62,56 @@ glimpse(wages)
 
 glimpse(unemployment)
 
-group_by(unemployment, date=as.integer(lubridate::year(date))) %>%
-  summarise(rate=mean(all)) %>%
-  left_join(select(wages, date, median), by="date") %>%
+unemployment %>% 
+  group_by(date = as.integer(lubridate::year(date))) %>%
+  summarise(rate = mean(all)) %>%
+  left_join(select(wages, date, median), by = "date") %>%
   filter(!is.na(median)) %>%
-  arrange(date) -> df
+  arrange(date) -> xdf
 
 cols <- ggthemes::tableau_color_pal()(3)
 
 update_geom_font_defaults(font_rc)
 
-ggplot(df, aes(rate, median)) +
-  geom_path(color=cols[1], arrow=arrow(type="closed", length=unit(10, "points"))) +
+ggplot(xdf, aes(rate, median)) +
+  geom_path(
+     color = cols[1], 
+     arrow = arrow(
+       type = "closed", 
+       length = unit(10, "points")
+    )
+  ) +
   geom_point() +
-  geom_label_repel(aes(label=date),
-                   alpha=c(1, rep((4/5), (nrow(df)-2)), 1),
-                   size=c(5, rep(3, (nrow(df)-2)), 5),
-                   color=c(cols[2],
-                           rep("#2b2b2b", (nrow(df)-2)),
-                           cols[3]),
-                   family=font_rc) +
-  scale_x_continuous(name="Unemployment Rate", expand=c(0,0.001), label=scales::percent) +
-  scale_y_continuous(name="Median Wage", expand=c(0,0.25), label=scales::dollar) +
-  labs(title="U.S. Unemployment Rate vs Median Wage Since 1978",
-       subtitle="Wage data is in 2015 USD",
-       caption="Source: EPI analysis of Current Population Survey Outgoing Rotation Group microdata") +
+  geom_label_repel(
+    aes(label = date),
+    alpha = c(1, rep((4/5), (nrow(xdf)-2)), 1),
+    size = c(5, rep(3, (nrow(xdf)-2)), 5),
+    color = c(cols[2], rep("#2b2b2b", (nrow(xdf)-2)), cols[3]),
+    family = font_rc
+  ) +
+  scale_x_continuous(
+    name = "Unemployment Rate", 
+    expand = c(0,0.001), label = scales::percent
+  ) +
+  scale_y_continuous(
+    name = "Median Wage", 
+    expand = c(0,0.25), 
+    label = scales::dollar
+  ) +
+  labs(
+    title = "U.S. Unemployment Rate vs Median Wage Since 1978",
+    subtitle = "Wage data is in 2015 USD",
+    caption = "Source: EPI analysis of Current Population Survey Outgoing Rotation Group microdata"
+  ) +
   theme_ipsum_rc(grid="XY")
 ```
+
+## epidata Metrics
+
+```{r cloc, echo=FALSE}
+cloc::cloc_pkg_md()
+```
+
+## Code of Conduct
+
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.

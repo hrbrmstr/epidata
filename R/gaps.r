@@ -29,6 +29,7 @@ get_gender_wage_gap <- function(by=NULL) {
   if (!is.null(by)) params <- make_params(params, by, c("r"))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
@@ -78,6 +79,7 @@ get_black_white_wage_gap <- function(by=NULL) {
   if (!is.null(by)) params <- make_params(params, by, c("g"))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
@@ -127,6 +129,7 @@ get_hispanic_white_wage_gap <- function(by=NULL) {
   if (!is.null(by)) params <- make_params(params, by, c("g"))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
@@ -167,6 +170,7 @@ get_college_wage_premium <- function(by=NULL) {
   if (!is.null(by)) params <- make_params(params, by, c("g"))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
@@ -209,6 +213,7 @@ get_non_high_school_wage_penalty <- function(by=NULL) {
   if (!is.null(by)) params <- make_params(params, by, c("g"))
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")
@@ -244,14 +249,14 @@ get_non_high_school_wage_penalty <- function(by=NULL) {
 #'   unemployment data by gender and race, you would set this parameter to "\code{gr}".
 #' @return \code{tbl_df} with data filtered by the selected criteria.
 #' @references \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
+#' @return data frame
 #' @export
-#' @examples \dontrun{
-#' get_wage_ratios()
+#' @examples
+#' if (not_dos()) get_wage_ratios()
 #'
-#' get_wage_ratios("r")
+#' if (not_dos()) get_wage_ratios("r")
 #'
-#' get_wage_ratios("gr")
-#' }
+#' if (not_dos()) get_wage_ratios("gr")
 get_wage_ratios <- function(by=NULL) {
 
   params <- list(preset="wage-ratios")
@@ -262,6 +267,7 @@ get_wage_ratios <- function(by=NULL) {
   }
 
   res <- epi_query(params)
+  if (is.null(res)) return(data.frame())
 
   cols <- stringi::stri_trans_tolower(res$columns$name)
   cols <- stringi::stri_replace_all_regex(cols, "[\\('\\)]", "")

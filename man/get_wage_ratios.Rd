@@ -13,6 +13,8 @@ unemployment data by gender and race, you would set this parameter to "\code{gr}
 }
 \value{
 \code{tbl_df} with data filtered by the selected criteria.
+
+data frame
 }
 \description{
 The 95–50 and 50–10 wage ratios are representations of the level of inequality within
@@ -28,13 +30,11 @@ top and the middle or the middle and the bottom of the wage distribution.
 }
 }
 \examples{
-\dontrun{
-get_wage_ratios()
+if (not_dos()) get_wage_ratios()
 
-get_wage_ratios("r")
+if (not_dos()) get_wage_ratios("r")
 
-get_wage_ratios("gr")
-}
+if (not_dos()) get_wage_ratios("gr")
 }
 \references{
 \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}

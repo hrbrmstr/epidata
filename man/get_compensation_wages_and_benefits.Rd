@@ -8,6 +8,8 @@ get_compensation_wages_and_benefits()
 }
 \value{
 \code{tbl_df} with data filtered by the selected criteria.
+
+data frame
 }
 \description{
 Return the nonwage payments, referred to as fringe benefits, and wages.
@@ -21,7 +23,7 @@ Wages are in 2016 dollars. Wage and salary workers (NIPA) | Private-sector worke
 Data source: NIPA | ECEC
 }
 \examples{
-get_compensation_wages_and_benefits()
+if (not_dos()) get_compensation_wages_and_benefits()
 }
 \references{
 \href{https://www.epi.org/data/}{Economic Policy Institute Data Library}
